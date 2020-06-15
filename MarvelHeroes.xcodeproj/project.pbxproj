@@ -34,6 +34,16 @@
 		9442076E2497C9C10029B524 /* CharacterInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9442076D2497C9C10029B524 /* CharacterInteractorImpl.swift */; };
 		944207702497C9D60029B524 /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9442076F2497C9D60029B524 /* CharacterRepository.swift */; };
 		944207722497C9DF0029B524 /* CharacterRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944207712497C9DF0029B524 /* CharacterRepositoryImpl.swift */; };
+		949AC7632497D26000EDDA4C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC7622497D26000EDDA4C /* Image.swift */; };
+		949AC7652497D27200EDDA4C /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC7642497D27200EDDA4C /* Url.swift */; };
+		949AC7672497D35E00EDDA4C /* ComicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC7662497D35E00EDDA4C /* ComicList.swift */; };
+		949AC7692497D36800EDDA4C /* StoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC7682497D36800EDDA4C /* StoryList.swift */; };
+		949AC76B2497D37100EDDA4C /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC76A2497D37100EDDA4C /* EventList.swift */; };
+		949AC76D2497D37900EDDA4C /* SeriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC76C2497D37900EDDA4C /* SeriesList.swift */; };
+		949AC76F2497D42700EDDA4C /* ComicSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC76E2497D42700EDDA4C /* ComicSummary.swift */; };
+		949AC7712497D43E00EDDA4C /* StorySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC7702497D43E00EDDA4C /* StorySummary.swift */; };
+		949AC7732497D44D00EDDA4C /* EventSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC7722497D44D00EDDA4C /* EventSummary.swift */; };
+		949AC7752497D46000EDDA4C /* SeriesSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC7742497D46000EDDA4C /* SeriesSummary.swift */; };
 		94B160212497BE5500E22EB0 /* README.MD in Resources */ = {isa = PBXBuildFile; fileRef = 94B160202497BE5500E22EB0 /* README.MD */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +98,16 @@
 		9442076D2497C9C10029B524 /* CharacterInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInteractorImpl.swift; sourceTree = "<group>"; };
 		9442076F2497C9D60029B524 /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
 		944207712497C9DF0029B524 /* CharacterRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryImpl.swift; sourceTree = "<group>"; };
+		949AC7622497D26000EDDA4C /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		949AC7642497D27200EDDA4C /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
+		949AC7662497D35E00EDDA4C /* ComicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicList.swift; sourceTree = "<group>"; };
+		949AC7682497D36800EDDA4C /* StoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryList.swift; sourceTree = "<group>"; };
+		949AC76A2497D37100EDDA4C /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
+		949AC76C2497D37900EDDA4C /* SeriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesList.swift; sourceTree = "<group>"; };
+		949AC76E2497D42700EDDA4C /* ComicSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicSummary.swift; sourceTree = "<group>"; };
+		949AC7702497D43E00EDDA4C /* StorySummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySummary.swift; sourceTree = "<group>"; };
+		949AC7722497D44D00EDDA4C /* EventSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSummary.swift; sourceTree = "<group>"; };
+		949AC7742497D46000EDDA4C /* SeriesSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesSummary.swift; sourceTree = "<group>"; };
 		94B160202497BE5500E22EB0 /* README.MD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.MD; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -271,6 +291,16 @@
 			isa = PBXGroup;
 			children = (
 				944207692497C9800029B524 /* Character.swift */,
+				949AC7642497D27200EDDA4C /* Url.swift */,
+				949AC7622497D26000EDDA4C /* Image.swift */,
+				949AC7662497D35E00EDDA4C /* ComicList.swift */,
+				949AC76E2497D42700EDDA4C /* ComicSummary.swift */,
+				949AC7682497D36800EDDA4C /* StoryList.swift */,
+				949AC7702497D43E00EDDA4C /* StorySummary.swift */,
+				949AC76A2497D37100EDDA4C /* EventList.swift */,
+				949AC7722497D44D00EDDA4C /* EventSummary.swift */,
+				949AC76C2497D37900EDDA4C /* SeriesList.swift */,
+				949AC7742497D46000EDDA4C /* SeriesSummary.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -417,6 +447,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949AC7652497D27200EDDA4C /* Url.swift in Sources */,
+				949AC7672497D35E00EDDA4C /* ComicList.swift in Sources */,
+				949AC76F2497D42700EDDA4C /* ComicSummary.swift in Sources */,
 				944207612497C7FC0029B524 /* DetailViewController.swift in Sources */,
 				944207562497C6EE0029B524 /* Configurator.swift in Sources */,
 				9442074E2497C6B90029B524 /* HomeView.swift in Sources */,
@@ -424,17 +457,24 @@
 				944207432497C6490029B524 /* AppWireframe.swift in Sources */,
 				944207642497C7FC0029B524 /* DetailWireframe.swift in Sources */,
 				944207452497C6530029B524 /* AppStyler.swift in Sources */,
+				949AC7712497D43E00EDDA4C /* StorySummary.swift in Sources */,
 				9442074C2497C6B90029B524 /* HomePresenter.swift in Sources */,
 				944207572497C6EE0029B524 /* Presenter.swift in Sources */,
+				949AC7632497D26000EDDA4C /* Image.swift in Sources */,
+				949AC76D2497D37900EDDA4C /* SeriesList.swift in Sources */,
 				944207702497C9D60029B524 /* CharacterRepository.swift in Sources */,
 				944207502497C6B90029B524 /* HomeWireframe.swift in Sources */,
 				944207552497C6EE0029B524 /* ViewProtocol.swift in Sources */,
 				9442074F2497C6B90029B524 /* HomeConfigurator.swift in Sources */,
 				944207722497C9DF0029B524 /* CharacterRepositoryImpl.swift in Sources */,
 				9437A3922497BC5A002A8F18 /* AppDelegate.swift in Sources */,
+				949AC7732497D44D00EDDA4C /* EventSummary.swift in Sources */,
 				9442074D2497C6B90029B524 /* HomeViewController.swift in Sources */,
+				949AC7692497D36800EDDA4C /* StoryList.swift in Sources */,
+				949AC76B2497D37100EDDA4C /* EventList.swift in Sources */,
 				944207632497C7FC0029B524 /* DetailConfigurator.swift in Sources */,
 				9442076A2497C9800029B524 /* Character.swift in Sources */,
+				949AC7752497D46000EDDA4C /* SeriesSummary.swift in Sources */,
 				9442076C2497C9A90029B524 /* CharacterInteractor.swift in Sources */,
 				9442076E2497C9C10029B524 /* CharacterInteractorImpl.swift in Sources */,
 				944207602497C7FC0029B524 /* DetailPresenter.swift in Sources */,
