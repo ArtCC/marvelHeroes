@@ -19,4 +19,7 @@ enum CharacterRepositoryResult: Int, CaseIterable {
 
 /// Protocol to define entity handlers
 protocol CharacterRepository {
+    
+    func getAllCharacters(page: Int,
+                          output: @escaping(_ result: CharacterResult, _ characters: [Character]?) -> Void)
 }

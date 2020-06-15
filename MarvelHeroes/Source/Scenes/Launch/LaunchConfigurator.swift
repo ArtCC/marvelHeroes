@@ -33,7 +33,8 @@ class LaunchConfigurator: Configurator {
     
     func prepareScene(viewController: UIViewController) {
         let presenter = LaunchPresenter(view: viewController as! LaunchView,
-                                        wireframe: viewController as! LaunchWireframe)
+                                        wireframe: viewController as! LaunchWireframe,
+                                        interactor: CharacterInteractorImpl(repository: CharacterRepositoryImpl()))
         guard let viewController = viewController as? LaunchViewController else {
             assertionFailure("Invalid UIViewController to prepare scene")
             return

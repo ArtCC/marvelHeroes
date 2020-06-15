@@ -15,4 +15,11 @@ enum CharacterResult: Int {
 }
 
 protocol CharacterInteractor {
+    
+    /// Get all characters
+    /// - Parameters:
+    ///   - page: page for request and pagination
+    ///   - output: array with characters or nil
+    func retrieveCharacters(page: Int,
+                            output: @escaping(_ result: CharacterResult, _ characters: [Character]?) -> Void)
 }

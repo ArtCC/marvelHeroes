@@ -9,4 +9,22 @@
 import UIKit
 
 class CharacterInteractorImpl: CharacterInteractor {
+    
+    private let repository: CharacterRepository
+    
+    init(repository: CharacterRepository) {
+        self.repository = repository
+    }
+    
+    func retrieveCharacters(page: Int,
+                            output: @escaping(_ result: CharacterResult, _ characters: [Character]?) -> Void) {
+        self.repository.getAllCharacters(page: page) { (result, characters) in
+            switch result {
+            case .success:
+                output(.success, characters)
+            case .error:
+                output(.error, nil)
+            }
+        }
+    }
 }

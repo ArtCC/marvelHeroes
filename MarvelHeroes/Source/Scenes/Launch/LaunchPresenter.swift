@@ -12,15 +12,17 @@ import Foundation
 class LaunchPresenter: Presenter {
     
     fileprivate struct Constants {
-        static let launchDuration = TimeInterval(1.5)
+        static let launchDuration = TimeInterval(1.0)
     }
     
     fileprivate weak var view: LaunchView!
     fileprivate weak var wireframe: LaunchWireframe!
+    fileprivate var interactor: CharacterInteractor!
     
-    init(view: LaunchView, wireframe: LaunchWireframe) {
+    init(view: LaunchView, wireframe: LaunchWireframe, interactor: CharacterInteractor) {
         self.view = view
         self.wireframe = wireframe
+        self.interactor = interactor
     }
     
     func viewDidUpdate(status: ViewStatus) {
@@ -28,12 +30,13 @@ class LaunchPresenter: Presenter {
         case .didLoad:
             self.view.setupUI()
             self.view.localizeView()
+            self.getCharacters()
         case .didAppear:
             break
         case .didDisappear:
             break
         case .willAppear:
-            self.finishLaunchScene()
+            break
         case .willDisappear:
             break
         }
@@ -46,6 +49,12 @@ extension LaunchPresenter {
 
 // MARK: - Extension private methods.
 private extension LaunchPresenter {
+    
+    func getCharacters() {
+        self.interactor.retrieveCharacters(page: 0) { (result, characters) in
+            self.finishLaunchScene()
+        }
+    }
     
     /// Finish launch scene visualization after delay.
     func finishLaunchScene() {
