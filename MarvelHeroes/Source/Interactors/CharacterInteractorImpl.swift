@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CharacterInteractorImpl.swift
 //  MarvelHeroes
 //
 //  Created by Arturo Carretero Calvo on 15/06/2020.
@@ -8,9 +8,5 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+class CharacterInteractorImpl: CharacterInteractor {
 }
