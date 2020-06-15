@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  LaunchViewController.swift
 //  MarvelHeroes
 //
 //  Created Arturo Carretero Calvo on 15/06/2020.
@@ -9,9 +9,12 @@
 import UIKit
 
 /// View implementation for scene.
-class HomeViewController: UIViewController {
+class LaunchViewController: UIViewController {
     
-    var presenter: HomePresenter?
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var presenter: LaunchPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +43,11 @@ class HomeViewController: UIViewController {
 }
 
 // MARK: View interface implementation methods.
-extension HomeViewController: HomeView {
+extension LaunchViewController: LaunchView {
     
     /// Setup the UI view.
     func setupUI() {
-        if let navController = self.navigationController {
-            AppStyler.styleNavigationBar(navigationController: navController)
-        }
-        self.centeredNavBarImage()
+        self.activityIndicator.startAnimating()
     }
     
     /// Localized UI.
@@ -56,19 +56,5 @@ extension HomeViewController: HomeView {
 }
 
 // MARK: Extension for private methods.
-private extension HomeViewController {
-    
-    func centeredNavBarImage() {
-        let navcontroller = navigationController!
-        let image = UIImage(named: "Marvel-comics-logo")
-        let imageView = UIImageView(image:image)
-        let bannerWidth = navcontroller.navigationItem.accessibilityFrame.size.width
-        let bannerHeight = navcontroller.navigationBar.frame.size.height
-        guard let imag = image else { return }
-        let bannerX = bannerWidth / 2 - imag.size.width / 2
-        let bannerY = bannerHeight / 2 - imag.size.height / 2
-        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
-        imageView.contentMode = .scaleAspectFit
-        navigationItem.titleView = imageView
-    }
+private extension LaunchViewController {
 }
