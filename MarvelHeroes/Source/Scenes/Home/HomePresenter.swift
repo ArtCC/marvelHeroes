@@ -49,10 +49,17 @@ class HomePresenter: Presenter {
     
     func getMoreCharactersWithPagination() {
         self.page += 1
-        self.interactor.retrieveCharacters(page: self.page) { (result, characters) in
+        self.interactor.retrieveCharacters(page: self.page, nameStartsWith: nil) { (result, characters) in
             if let collection = characters {
                 self.view.addNewCharacters(characters: collection)
             }
+        }
+    }
+    
+    func searchCustom(string: String) {
+        self.interactor.retrieveCharacters(page: 0, nameStartsWith: string) { (result, characters) in
+            guard let characters = SessionManager.shared.characters else { return}
+            self.view.showCharactersFromSearch(characters: characters)
         }
     }
 }

@@ -17,8 +17,9 @@ class CharacterInteractorImpl: CharacterInteractor {
     }
     
     func retrieveCharacters(page: Int,
+                            nameStartsWith: String?,
                             output: @escaping(_ result: CharacterResult, _ characters: [Character]?) -> Void) {
-        self.repository.getAllCharacters(page: page) { (result, characters) in
+        self.repository.getAllCharacters(page: page, nameStartsWith: nameStartsWith) { (result, characters) in
             switch result {
             case .success:
                 output(.success, characters)

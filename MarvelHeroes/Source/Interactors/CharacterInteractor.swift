@@ -19,7 +19,9 @@ protocol CharacterInteractor {
     /// Get all characters
     /// - Parameters:
     ///   - page: page for request and pagination
+    ///   - nameStartsWith: for custom request
     ///   - output: array with characters or nil
     func retrieveCharacters(page: Int,
+                            nameStartsWith: String?,
                             output: @escaping(_ result: CharacterResult, _ characters: [Character]?) -> Void)
 }

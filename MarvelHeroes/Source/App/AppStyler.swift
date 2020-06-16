@@ -14,13 +14,7 @@ class AppStyler: NSObject {
     ///
     /// - Returns: valid UIColor.
     static func defaultRedAppColor() -> UIColor {
-        return UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
-    }
-    
-    /// Default dark app color.
-    /// - Returns: valid UIColor.
-    static func darkAppColor() -> UIColor {
-        return UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        return UIColor(red: 236.0/255.0, green: 29.0/255.0, blue: 36.0/255.0, alpha: 1.0)
     }
     
     /// Default custmo app semibold.

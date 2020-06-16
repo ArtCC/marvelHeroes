@@ -12,9 +12,16 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var notResultsLabel: UILabel!
+
     var presenter: HomePresenter?
     var characters: [Character] = []
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var searchControl: Bool = false
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     fileprivate let heightCell = CGFloat(75.0)
     fileprivate let rowForPagination = Int(10)
@@ -54,9 +61,17 @@ extension HomeViewController: HomeView {
             AppStyler.styleNavigationBar(navigationController: navController)
         }
         self.centeredNavBarImage()
+        self.notResultsLabel.isHidden = true
+        self.notResultsLabel.text = NSLocalizedString("home.not.results.title.label", comment: String())
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
+        self.searchController.searchResultsUpdater = self
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder = NSLocalizedString("home.search.title.label", comment: String())
+        self.searchController.searchBar.tintColor = AppStyler.defaultRedAppColor()
+        self.navigationItem.searchController = searchController
+        self.definesPresentationContext = true
     }
     
     /// Localized UI.
@@ -70,6 +85,19 @@ extension HomeViewController: HomeView {
         self.tableView.reloadData()
     }
     
+    func showCharactersFromSearch(characters: [Character]) {
+        if !characters.isEmpty {
+            self.tableView.isHidden = false
+            self.notResultsLabel.isHidden = true
+            self.characters.removeAll()
+            self.characters = characters
+            self.tableView.reloadData()
+        } else {
+            self.tableView.isHidden = true
+            self.notResultsLabel.isHidden = false
+        }
+    }
+    
     /// Add new object to table view
     /// - Parameter characters: character collection
     func addNewCharacters(characters: [Character]) {
@@ -79,7 +107,8 @@ extension HomeViewController: HomeView {
     
     /// Show empty characters message
     func empty() {
-        #warning("EMPTY CHARACTERS OR ERROR. SHOW CELL.")
+        self.tableView.isHidden = true
+        self.notResultsLabel.isHidden = false
     }
 }
 
@@ -106,14 +135,32 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == (self.characters.count - self.rowForPagination) {
+        if indexPath.row == (self.characters.count - self.rowForPagination) && !self.searchControl {
             self.presenter?.getMoreCharactersWithPagination()
         }
     }
 }
 
+// MARK: Extension for UISearchController methods.
+extension HomeViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        guard let text = searchBar.text else { return }
+        self.filterContentForSearchText(text)
+    }
+}
+
 // MARK: Extension for private methods.
 private extension HomeViewController {
+    
+    func filterContentForSearchText(_ searchText: String) {
+        printDebug("Search: \(searchText)")
+        if searchText.count > 3 {
+            self.searchControl = true
+            self.presenter?.searchCustom(string: searchText)
+        }
+    }
     
     func centeredNavBarImage() {
         let navcontroller = navigationController!

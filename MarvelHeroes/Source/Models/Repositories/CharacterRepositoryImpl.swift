@@ -24,17 +24,20 @@ class CharacterRepositoryImpl: CharacterRepository {
     }
     
     func getAllCharacters(page: Int,
+                          nameStartsWith: String?,
                           output: @escaping(_ result: CharacterResult, _ characters: [Character]?) -> Void) {
         let ts = String(Date().timeIntervalSince1970)
-        let urlParams = [
+        var urlParams = [
             "ts" : ts,
             "hash" : MD5.MD5Hex(data: MD5.MD5(string: ts + Constants.privateKey + Constants.publicKey)).lowercased(),
             "apikey" : Constants.publicKey,
             "limit" : String(Constants.limit),
             "offset" : String(page * Constants.limit)
         ]
-        let urlString: String = Constants.basePath + Constants.charactersPath
-        AF.request(urlString, method: .get, parameters: urlParams)
+        if let name = nameStartsWith {
+            urlParams.updateValue(name, forKey: "nameStartsWith")
+        }
+        AF.request(Constants.basePath + Constants.charactersPath, method: .get, parameters: urlParams)
             .validate(statusCode: 200..<300)
             .validate(contentType: [Constants.application])
             .responseJSON { (response) in

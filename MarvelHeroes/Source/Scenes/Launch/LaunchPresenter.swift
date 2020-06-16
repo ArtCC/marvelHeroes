@@ -52,7 +52,7 @@ extension LaunchPresenter {
 private extension LaunchPresenter {
     
     func getCharacters() {
-        self.interactor.retrieveCharacters(page: Constants.page) { (result, characters) in
+        self.interactor.retrieveCharacters(page: Constants.page, nameStartsWith: nil) { (result, characters) in
             self.finishLaunchScene()
         }
     }
