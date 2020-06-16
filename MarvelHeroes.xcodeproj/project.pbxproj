@@ -192,8 +192,8 @@
 		9437A3902497BC5A002A8F18 /* MarvelHeroes */ = {
 			isa = PBXGroup;
 			children = (
-				9442073F2497C5AD0029B524 /* Source */,
 				9442073E2497C5A30029B524 /* UI */,
+				9442073F2497C5AD0029B524 /* Source */,
 				944207382497C51F0029B524 /* Resources */,
 			);
 			path = MarvelHeroes;

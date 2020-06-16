@@ -9,3 +9,6 @@
 // Home
 "home.search.title.label" = "Search characters";
 "home.not.results.title.label" = "Sorry... without results :(";
+
+// Detail
+"detail.not.description.label" = "This character has no description.";

@@ -41,6 +41,7 @@
                             <constraint firstAttribute="height" constant="20" id="NnB-cd-iVg"/>
                             <constraint firstAttribute="width" constant="20" id="cRX-n6-b7P"/>
                         </constraints>
+                        <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </activityIndicatorView>
                 </subviews>
                 <constraints>

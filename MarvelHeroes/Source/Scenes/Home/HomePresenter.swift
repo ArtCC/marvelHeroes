@@ -44,7 +44,7 @@ class HomePresenter: Presenter {
     }
     
     func select(character: Character) {
-        printDebug(character.name!)
+        self.wireframe.navigateToDetailScene(character: character)
     }
     
     func getMoreCharactersWithPagination() {
@@ -60,6 +60,13 @@ class HomePresenter: Presenter {
         self.interactor.retrieveCharacters(page: 0, nameStartsWith: string) { (result, characters) in
             guard let characters = SessionManager.shared.characters else { return}
             self.view.showCharactersFromSearch(characters: characters)
+        }
+    }
+    
+    func reloadOriginalData() {
+        self.interactor.retrieveCharacters(page: 0, nameStartsWith: nil) { (result, characters) in
+            guard let characters = SessionManager.shared.characters else { return}
+            self.view.show(characters: characters)
         }
     }
 }
