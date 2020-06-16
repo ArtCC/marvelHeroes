@@ -10,11 +10,12 @@ import UIKit
 
 struct Image: Codable {
     
-    var path: String
-    var ext: String
+    var path: String?
+    var ext: String?
     
     var url: String {
-        return path + "." + ext
+        guard let p = path, let e = ext else { return "" }
+        return p + "." + e
     }
     
     enum CodingKeys: String, CodingKey {
