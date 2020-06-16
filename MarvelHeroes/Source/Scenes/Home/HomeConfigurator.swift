@@ -33,7 +33,8 @@ class HomeConfigurator: Configurator {
     
     func prepareScene(viewController: UIViewController) {
         let presenter = HomePresenter(view: viewController as! HomeView,
-                                      wireframe: viewController as! HomeWireframe)
+                                      wireframe: viewController as! HomeWireframe,
+                                      interactor: CharacterInteractorImpl(repository: CharacterRepositoryImpl()))
         guard let viewController = viewController as? HomeViewController else {
             assertionFailure("Invalid UIViewController to prepare scene")
             return

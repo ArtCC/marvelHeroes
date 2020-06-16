@@ -13,6 +13,7 @@ class LaunchPresenter: Presenter {
     
     fileprivate struct Constants {
         static let launchDuration = TimeInterval(1.0)
+        static let page = Int(0)
     }
     
     fileprivate weak var view: LaunchView!
@@ -51,7 +52,7 @@ extension LaunchPresenter {
 private extension LaunchPresenter {
     
     func getCharacters() {
-        self.interactor.retrieveCharacters(page: 0) { (result, characters) in
+        self.interactor.retrieveCharacters(page: Constants.page) { (result, characters) in
             self.finishLaunchScene()
         }
     }

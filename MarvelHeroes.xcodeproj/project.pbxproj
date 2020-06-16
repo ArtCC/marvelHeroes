@@ -58,6 +58,8 @@
 		949AC7912497EF4300EDDA4C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 949AC7902497EF4300EDDA4C /* Alamofire */; };
 		949AC7932497F34300EDDA4C /* UtilsFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC7922497F34300EDDA4C /* UtilsFunctions.swift */; };
 		949AC7962497FC1800EDDA4C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC7952497FC1800EDDA4C /* SessionManager.swift */; };
+		949AC79A2498E73800EDDA4C /* CharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949AC7982498E73800EDDA4C /* CharacterViewCell.swift */; };
+		949AC79B2498E73800EDDA4C /* CharacterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 949AC7992498E73800EDDA4C /* CharacterViewCell.xib */; };
 		94B160212497BE5500E22EB0 /* README.MD in Resources */ = {isa = PBXBuildFile; fileRef = 94B160202497BE5500E22EB0 /* README.MD */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +137,8 @@
 		949AC7892497DFF800EDDA4C /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		949AC7922497F34300EDDA4C /* UtilsFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsFunctions.swift; sourceTree = "<group>"; };
 		949AC7952497FC1800EDDA4C /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		949AC7982498E73800EDDA4C /* CharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewCell.swift; sourceTree = "<group>"; };
+		949AC7992498E73800EDDA4C /* CharacterViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterViewCell.xib; sourceTree = "<group>"; };
 		94B160202497BE5500E22EB0 /* README.MD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.MD; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,6 +274,7 @@
 		944207462497C6660029B524 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				949AC7972498E72000EDDA4C /* Subviews */,
 				9442074A2497C6B90029B524 /* HomeConfigurator.swift */,
 				944207472497C6B90029B524 /* HomePresenter.swift */,
 				944207492497C6B90029B524 /* HomeView.swift */,
@@ -387,6 +392,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		949AC7972498E72000EDDA4C /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				949AC7982498E73800EDDA4C /* CharacterViewCell.swift */,
+				949AC7992498E73800EDDA4C /* CharacterViewCell.xib */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -502,6 +516,7 @@
 				9437A39E2497BC5E002A8F18 /* LaunchScreen.storyboard in Resources */,
 				9437A39B2497BC5E002A8F18 /* Assets.xcassets in Resources */,
 				94B160212497BE5500E22EB0 /* README.MD in Resources */,
+				949AC79B2498E73800EDDA4C /* CharacterViewCell.xib in Resources */,
 				949AC78A2497DFF800EDDA4C /* Montserrat-Medium.ttf in Resources */,
 				9437A3992497BC5A002A8F18 /* Main.storyboard in Resources */,
 				949AC78C2497DFF800EDDA4C /* Montserrat-SemiBold.ttf in Resources */,
@@ -565,6 +580,7 @@
 				9442076A2497C9800029B524 /* Character.swift in Sources */,
 				949AC7752497D46000EDDA4C /* SeriesSummary.swift in Sources */,
 				949AC7812497DBE600EDDA4C /* LaunchView.swift in Sources */,
+				949AC79A2498E73800EDDA4C /* CharacterViewCell.swift in Sources */,
 				9442076C2497C9A90029B524 /* CharacterInteractor.swift in Sources */,
 				949AC7932497F34300EDDA4C /* UtilsFunctions.swift in Sources */,
 				9442076E2497C9C10029B524 /* CharacterInteractorImpl.swift in Sources */,

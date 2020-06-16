@@ -20,6 +20,10 @@ enum CharacterRepositoryResult: Int, CaseIterable {
 /// Protocol to define entity handlers
 protocol CharacterRepository {
     
+    /// Request for get all characters in alpahbetic sorted
+    /// - Parameters:
+    ///   - page: page
+    ///   - output: enum with result and character collection, nil or empty
     func getAllCharacters(page: Int,
                           output: @escaping(_ result: CharacterResult, _ characters: [Character]?) -> Void)
 }
