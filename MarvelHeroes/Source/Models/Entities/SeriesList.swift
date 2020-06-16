@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SeriesList.swift
 //  MarvelHeroes
 //
 //  Created by Arturo Carretero Calvo on 15/06/2020.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+struct SeriesList: Codable {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    var available: Int?
+    var returned: Int?
+    var collectionURI: String?
+    var items: [SeriesSummary]?
 }
