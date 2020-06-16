@@ -62,6 +62,13 @@ class HomePresenter: Presenter {
             self.view.showCharactersFromSearch(characters: characters)
         }
     }
+    
+    func reloadOriginalData() {
+        self.interactor.retrieveCharacters(page: 0, nameStartsWith: nil) { (result, characters) in
+            guard let characters = SessionManager.shared.characters else { return}
+            self.view.show(characters: characters)
+        }
+    }
 }
 
 // MARK: - Presenter public custom methods to handle view events.

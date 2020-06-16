@@ -66,6 +66,7 @@ extension HomeViewController: HomeView {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
+        self.searchController.searchBar.delegate = self
         self.searchController.searchResultsUpdater = self
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.searchBar.placeholder = NSLocalizedString("home.search.title.label", comment: String())
@@ -81,6 +82,7 @@ extension HomeViewController: HomeView {
     /// Load characters in table view
     /// - Parameter characters: character collection
     func show(characters: [Character]) {
+        self.searchControl = false
         self.characters = characters
         self.tableView.reloadData()
     }
@@ -142,7 +144,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 // MARK: Extension for UISearchController methods.
-extension HomeViewController: UISearchResultsUpdating {
+extension HomeViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.presenter?.reloadOriginalData()
+    }
     
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
