@@ -1,5 +1,5 @@
 //
-//  HomeConfigurator.swift
+//  LaunchConfigurator.swift
 //  MarvelHeroes
 //
 //  Created Arturo Carretero Calvo on 15/06/2020.
@@ -9,18 +9,18 @@
 import UIKit
 
 /// Configurator class to provide a complete scene ready to use.
-class HomeConfigurator: Configurator {
+class LaunchConfigurator: Configurator {
     
-    static let shared = HomeConfigurator()
+    static let shared = LaunchConfigurator()
     
     /// Class constants.
     fileprivate struct Constants {
         static let storyboardName: String = "Main"
-        static let storyboardId: String = "HomeViewController"
+        static let storyboardId: String = "LaunchViewController"
     }
     
     func isValid(viewController: UIViewController) -> Bool {
-        return viewController is HomeViewController
+        return viewController is LaunchViewController
     }
     
     func storyboardName() -> String {
@@ -32,10 +32,10 @@ class HomeConfigurator: Configurator {
     }
     
     func prepareScene(viewController: UIViewController) {
-        let presenter = HomePresenter(view: viewController as! HomeView,
-                                      wireframe: viewController as! HomeWireframe,
-                                      interactor: CharacterInteractorImpl(repository: CharacterRepositoryImpl()))
-        guard let viewController = viewController as? HomeViewController else {
+        let presenter = LaunchPresenter(view: viewController as! LaunchView,
+                                        wireframe: viewController as! LaunchWireframe,
+                                        interactor: CharacterInteractorImpl(repository: CharacterRepositoryImpl()))
+        guard let viewController = viewController as? LaunchViewController else {
             assertionFailure("Invalid UIViewController to prepare scene")
             return
         }

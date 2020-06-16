@@ -17,10 +17,13 @@ class HomePresenter: Presenter {
     
     fileprivate weak var view: HomeView!
     fileprivate weak var wireframe: HomeWireframe!
+    fileprivate var interactor: CharacterInteractor!
+    fileprivate var page = Int(0)
     
-    init(view: HomeView, wireframe: HomeWireframe) {
+    init(view: HomeView, wireframe: HomeWireframe, interactor: CharacterInteractor) {
         self.view = view
         self.wireframe = wireframe
+        self.interactor = interactor
     }
     
     func viewDidUpdate(status: ViewStatus) {
@@ -28,6 +31,7 @@ class HomePresenter: Presenter {
         case .didLoad:
             self.view.setupUI()
             self.view.localizeView()
+            self.getCharacters()
         case .didAppear:
             break
         case .didDisappear:
@@ -38,6 +42,26 @@ class HomePresenter: Presenter {
             break
         }
     }
+    
+    func select(character: Character) {
+        printDebug(character.name!)
+    }
+    
+    func getMoreCharactersWithPagination() {
+        self.page += 1
+        self.interactor.retrieveCharacters(page: self.page, nameStartsWith: nil) { (result, characters) in
+            if let collection = characters {
+                self.view.addNewCharacters(characters: collection)
+            }
+        }
+    }
+    
+    func searchCustom(string: String) {
+        self.interactor.retrieveCharacters(page: 0, nameStartsWith: string) { (result, characters) in
+            guard let characters = SessionManager.shared.characters else { return}
+            self.view.showCharactersFromSearch(characters: characters)
+        }
+    }
 }
 
 // MARK: - Presenter public custom methods to handle view events.
@@ -46,4 +70,9 @@ extension HomePresenter {
 
 // MARK: - Extension private methods.
 private extension HomePresenter {
+    
+    func getCharacters() {
+        guard let characters = SessionManager.shared.characters else { return self.view.empty()}
+        self.view.show(characters: characters)
+    }
 }

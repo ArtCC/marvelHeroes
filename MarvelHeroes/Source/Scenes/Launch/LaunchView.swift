@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  LaunchView.swift
 //  MarvelHeroes
 //
 //  Created Arturo Carretero Calvo on 15/06/2020.
@@ -9,10 +9,5 @@
 import Foundation
 
 /// Presenter implementation to handle abstract scene view logic.
-protocol HomeView: ViewProtocol {
-    
-    func show(characters: [Character])
-    func showCharactersFromSearch(characters: [Character])
-    func addNewCharacters(characters: [Character])
-    func empty()
+protocol LaunchView: ViewProtocol {
 }
