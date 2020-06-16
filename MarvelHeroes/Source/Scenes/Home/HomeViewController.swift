@@ -16,8 +16,8 @@ class HomeViewController: UIViewController {
     var presenter: HomePresenter?
     var characters: [Character] = []
     
-    fileprivate let heightCell = CGFloat(65.0)
-    fileprivate let rowForPagination = Int(5)
+    fileprivate let heightCell = CGFloat(75.0)
+    fileprivate let rowForPagination = Int(10)
     
     override func viewDidLoad() {
         super.viewDidLoad()
