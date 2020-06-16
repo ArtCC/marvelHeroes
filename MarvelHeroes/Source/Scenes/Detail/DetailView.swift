@@ -10,4 +10,6 @@ import Foundation
 
 /// Presenter implementation to handle abstract scene view logic.
 protocol DetailView: ViewProtocol {
+    
+    func show(character: Character)
 }

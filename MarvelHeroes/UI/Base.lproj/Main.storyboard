@@ -11,6 +11,9 @@
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
         </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Launch View Controller-->
@@ -105,24 +108,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DETAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbz-Xb-AiW">
-                                <rect key="frame" x="179" y="437.5" width="56" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZf-Hw-zGb">
+                                <rect key="frame" x="0.0" y="612" width="414" height="250"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMC-lz-tjC">
+                                        <rect key="frame" x="20" y="20" width="374" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-Lv-2Wk">
+                                        <rect key="frame" x="20" y="60.5" width="374" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="AiZ-Gj-HuF"/>
+                                    <constraint firstAttribute="trailing" secondItem="OMC-lz-tjC" secondAttribute="trailing" constant="20" id="Dgf-ek-88a"/>
+                                    <constraint firstItem="OMC-lz-tjC" firstAttribute="top" secondItem="cZf-Hw-zGb" secondAttribute="top" constant="20" id="E2Z-oh-v2T"/>
+                                    <constraint firstItem="cYc-Lv-2Wk" firstAttribute="leading" secondItem="cZf-Hw-zGb" secondAttribute="leading" constant="20" id="E4q-vp-BWM"/>
+                                    <constraint firstItem="OMC-lz-tjC" firstAttribute="leading" secondItem="cZf-Hw-zGb" secondAttribute="leading" constant="20" id="O6q-PO-eTM"/>
+                                    <constraint firstItem="cYc-Lv-2Wk" firstAttribute="top" secondItem="OMC-lz-tjC" secondAttribute="bottom" constant="10" id="asy-h3-A8a"/>
+                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="cYc-Lv-2Wk" secondAttribute="bottom" priority="250" constant="20" id="dpI-Nk-FSM"/>
+                                    <constraint firstAttribute="trailing" secondItem="cYc-Lv-2Wk" secondAttribute="trailing" constant="20" id="fQr-B6-YmQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmj-pe-mLV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="568"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j9z-uq-y6Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="568"/>
+                                    </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="QrJ-Bc-pjt">
+                                        <rect key="frame" x="197" y="274" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="Fxv-ww-yKi"/>
+                                            <constraint firstAttribute="height" constant="20" id="avP-au-CRf"/>
+                                        </constraints>
+                                        <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="j9z-uq-y6Z" secondAttribute="bottom" id="BPQ-zQ-ile"/>
+                                    <constraint firstItem="j9z-uq-y6Z" firstAttribute="top" secondItem="vmj-pe-mLV" secondAttribute="top" id="Q3P-kp-hmw"/>
+                                    <constraint firstItem="QrJ-Bc-pjt" firstAttribute="centerX" secondItem="j9z-uq-y6Z" secondAttribute="centerX" id="QAc-02-kzc"/>
+                                    <constraint firstAttribute="trailing" secondItem="j9z-uq-y6Z" secondAttribute="trailing" id="dmN-3S-fZT"/>
+                                    <constraint firstItem="QrJ-Bc-pjt" firstAttribute="centerY" secondItem="j9z-uq-y6Z" secondAttribute="centerY" id="wUF-Mq-0aH"/>
+                                    <constraint firstItem="j9z-uq-y6Z" firstAttribute="leading" secondItem="vmj-pe-mLV" secondAttribute="leading" id="zze-jV-ver"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="bbz-Xb-AiW" firstAttribute="centerX" secondItem="fmC-kN-yXb" secondAttribute="centerX" id="f6h-nM-xlr"/>
-                            <constraint firstItem="bbz-Xb-AiW" firstAttribute="centerY" secondItem="fmC-kN-yXb" secondAttribute="centerY" id="qe0-kq-GPO"/>
+                            <constraint firstItem="cZf-Hw-zGb" firstAttribute="trailing" secondItem="Qoe-fV-ClS" secondAttribute="trailing" id="3Dl-Pb-NdC"/>
+                            <constraint firstItem="vmj-pe-mLV" firstAttribute="top" secondItem="Qoe-fV-ClS" secondAttribute="top" id="DTe-wx-w3d"/>
+                            <constraint firstItem="cZf-Hw-zGb" firstAttribute="leading" secondItem="Qoe-fV-ClS" secondAttribute="leading" id="Lls-ge-bnz"/>
+                            <constraint firstItem="cZf-Hw-zGb" firstAttribute="top" secondItem="vmj-pe-mLV" secondAttribute="bottom" id="VsX-uU-65J"/>
+                            <constraint firstItem="cZf-Hw-zGb" firstAttribute="top" secondItem="vmj-pe-mLV" secondAttribute="bottom" id="dIT-md-F9p"/>
+                            <constraint firstItem="vmj-pe-mLV" firstAttribute="trailing" secondItem="Qoe-fV-ClS" secondAttribute="trailing" id="h5w-5o-koQ"/>
+                            <constraint firstItem="vmj-pe-mLV" firstAttribute="leading" secondItem="Qoe-fV-ClS" secondAttribute="leading" id="hDz-IM-cB0"/>
+                            <constraint firstItem="cZf-Hw-zGb" firstAttribute="bottom" secondItem="Qoe-fV-ClS" secondAttribute="bottom" id="pgt-U9-mQH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qoe-fV-ClS"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="QrJ-Bc-pjt" id="osB-rl-iLT"/>
+                        <outlet property="characterImageView" destination="j9z-uq-y6Z" id="ZJZ-Ah-Dw0"/>
+                        <outlet property="descriptionLabel" destination="cYc-Lv-2Wk" id="mxy-u9-Ktx"/>
+                        <outlet property="nameLabel" destination="OMC-lz-tjC" id="MrX-GX-mpK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKg-ve-Wrq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872" y="139"/>
+            <point key="canvasLocation" x="871.01449275362324" y="138.61607142857142"/>
         </scene>
     </scenes>
     <resources>

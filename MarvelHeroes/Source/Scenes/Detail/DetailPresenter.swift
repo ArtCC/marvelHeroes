@@ -15,6 +15,8 @@ class DetailPresenter: Presenter {
         static let duration = TimeInterval(1.5)
     }
     
+    var character: Character?
+    
     fileprivate weak var view: DetailView!
     fileprivate weak var wireframe: DetailWireframe!
     
@@ -28,6 +30,7 @@ class DetailPresenter: Presenter {
         case .didLoad:
             self.view.setupUI()
             self.view.localizeView()
+            self.getCharacter()
         case .didAppear:
             break
         case .didDisappear:
@@ -46,4 +49,9 @@ extension DetailPresenter {
 
 // MARK: - Extension private methods.
 private extension DetailPresenter {
+    
+    func getCharacter() {
+        guard let character = self.character else { return }
+        self.view.show(character: character)
+    }
 }

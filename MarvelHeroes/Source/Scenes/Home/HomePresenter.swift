@@ -44,7 +44,7 @@ class HomePresenter: Presenter {
     }
     
     func select(character: Character) {
-        printDebug(character.name!)
+        self.wireframe.navigateToDetailScene(character: character)
     }
     
     func getMoreCharactersWithPagination() {
