@@ -8,3 +8,4 @@ Developed as an exercise in Swift 5, with VIPER and UIKit architecture from iOS 
 Dependencies with Swift Package Manager:
 
 - Alamofire
+- AlamofireImage

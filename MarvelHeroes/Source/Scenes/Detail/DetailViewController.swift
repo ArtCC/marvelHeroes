@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 /// View implementation for scene.
 class DetailViewController: UIViewController {
@@ -66,14 +68,12 @@ extension DetailViewController: DetailView {
                 self.hiddenActivityIndicator()
                 return
         }
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self.hiddenActivityIndicator()
-                        self.characterImageView.image = image
-                    }
-                }
+        AF.request(url.absoluteString).responseImage { response in
+            if case .success(let image) = response.result {
+                self.hiddenActivityIndicator()
+                self.characterImageView.image = image
+            } else {
+                self.hiddenActivityIndicator()
             }
         }
     }

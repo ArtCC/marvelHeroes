@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 /// View implementation for scene.
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var notResultsLabel: UILabel!
-
+    
     var presenter: HomePresenter?
     var characters: [Character] = []
     var isSearchBarEmpty: Bool {
@@ -127,7 +129,23 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CharacterViewCell = CharacterViewCell.createCell(tableView: tableView)
-        cell.configViews(character: self.characters[indexPath.row])
+        cell.activityIndicator.startAnimating()
+        let character = self.characters[indexPath.row]
+        guard let name = character.name else { return UITableViewCell() }
+        cell.nameLabel.text = name
+        guard let urlImage = character.thumbnail?.url,
+            let url = URL(string: urlImage) else {
+                cell.wrongRequestImage()
+                return UITableViewCell()
+        }
+        AF.request(url.absoluteString).responseImage { response in
+            if case .success(let image) = response.result {
+                cell.thumbnailImageView.image = image
+                cell.hiddenActivityIndicator()
+            } else {
+                cell.wrongRequestImage()
+            }
+        }
         return cell
     }
     
