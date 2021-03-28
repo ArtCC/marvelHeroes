@@ -1,7 +1,7 @@
-## Marvel Heroes: application for iOS in Swift with information about Marvel characters in VIPER and test.
+## Marvel Heroes: application demo for iOS in Swift with information about Marvel characters in VIPER.
 
 Application that uses the Marvel API to display characters and their detail.
-Developed as an exercise in Swift 5, with VIPER and UIKit architecture from iOS 12.0
+Developed Swift 5 with VIPER and UIKit architecture from iOS 12.0
 
 <p>
 <img src="https://github.com/ArtCC/marvelHeroes/blob/main/Screenshots/1.png" height="400">
