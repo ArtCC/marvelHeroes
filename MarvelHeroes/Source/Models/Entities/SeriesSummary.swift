@@ -10,6 +10,6 @@ import UIKit
 
 struct SeriesSummary: Codable {
 
-    var resourceURI: String?
-    var name: String?
+  var resourceURI: String?
+  var name: String?
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,20 +35,10 @@
                             <constraint firstAttribute="width" constant="70" id="j6T-op-s0X"/>
                         </constraints>
                     </imageView>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-GY-qn5">
-                        <rect key="frame" x="35" y="28" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="NnB-cd-iVg"/>
-                            <constraint firstAttribute="width" constant="20" id="cRX-n6-b7P"/>
-                        </constraints>
-                        <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </activityIndicatorView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="W8o-GY-qn5" firstAttribute="centerX" secondItem="KT7-8R-3sG" secondAttribute="centerX" id="1aY-5c-HnP"/>
                     <constraint firstAttribute="bottom" secondItem="4Ir-Ju-tqw" secondAttribute="bottom" constant="2" id="6kN-Lh-TDd"/>
                     <constraint firstAttribute="bottom" secondItem="KT7-8R-3sG" secondAttribute="bottom" constant="2" id="CKs-K6-Hq2"/>
-                    <constraint firstItem="W8o-GY-qn5" firstAttribute="centerY" secondItem="KT7-8R-3sG" secondAttribute="centerY" id="E60-SM-SNk"/>
                     <constraint firstItem="4Ir-Ju-tqw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="U38-Z5-aE1"/>
                     <constraint firstItem="4Ir-Ju-tqw" firstAttribute="leading" secondItem="KT7-8R-3sG" secondAttribute="trailing" constant="10" id="W3W-qk-fqY"/>
                     <constraint firstItem="KT7-8R-3sG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="hgh-nM-KDf"/>
@@ -58,7 +48,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="activityIndicator" destination="W8o-GY-qn5" id="3TX-0N-Ah2"/>
                 <outlet property="nameLabel" destination="4Ir-Ju-tqw" id="vh9-4R-zrY"/>
                 <outlet property="thumbnailImageView" destination="KT7-8R-3sG" id="OeM-AY-z91"/>
             </connections>

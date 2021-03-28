@@ -10,6 +10,6 @@ import UIKit
 
 struct EventSummary: Codable {
 
-    var resourceURI: String?
-    var name: String?
+  var resourceURI: String?
+  var name: String?
 }

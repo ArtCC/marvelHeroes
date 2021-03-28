@@ -13,19 +13,19 @@ import UIKit
 /// - ok: operation finished without error.
 /// - error: operation finished with error.
 enum CharacterRepositoryResult: Int, CaseIterable {
-    
-    case ok, error
+  
+  case ok, error
 }
 
 /// Protocol to define entity handlers
 protocol CharacterRepository {
-    
-    /// Request for get all characters in alpahbetic sorted
-    /// - Parameters:
-    ///   - page: page
-    ///   - nameStartsWith: for custom request
-    ///   - output: enum with result and character collection, nil or empty
-    func getAllCharacters(page: Int,
-                          nameStartsWith: String?,
-                          output: @escaping(_ result: CharacterResult, _ characters: [Character]?) -> Void)
+  
+  /// Request for get all characters in alpahbetic sorted
+  /// - Parameters:
+  ///   - page: page
+  ///   - nameStartsWith: for custom request
+  ///   - output: enum with result and character collection, nil or empty
+  func getAllCharacters(page: Int,
+                        nameStartsWith: String?,
+                        output: @escaping(_ result: CharacterResult, _ characters: [Character]?) -> Void)
 }

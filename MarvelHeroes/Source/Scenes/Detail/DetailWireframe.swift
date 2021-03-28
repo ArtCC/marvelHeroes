@@ -13,8 +13,9 @@ protocol DetailWireframe: class {
 }
 
 // MARK: - UIViewController extension to implement wireframe protocol.
+
 extension DetailViewController: DetailWireframe {
-    
-    /// Override prepare(forsegue) method to configure next scene.
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
+
+  /// Override prepare(forsegue) method to configure next scene.
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
 }

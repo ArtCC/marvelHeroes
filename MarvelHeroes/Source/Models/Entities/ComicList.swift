@@ -10,8 +10,8 @@ import UIKit
 
 struct ComicList: Codable {
 
-    var available: Int?
-    var returned: Int?
-    var collectionURI: String?
-    var items: [ComicSummary]?
+  var available: Int?
+  var returned: Int?
+  var collectionURI: String?
+  var items: [ComicSummary]?
 }

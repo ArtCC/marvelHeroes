@@ -10,11 +10,11 @@ import Foundation
 
 /// Base module interface where we will know the state of the view so we will do the stuff needed.
 protocol Presenter: class {
-    
-    /// Handle UI status updates to take some actions.
-    ///
-    /// - Parameter status: current UI status (based on iOS view life cycle).
-    func viewDidUpdate(status: ViewStatus)
+  
+  /// Handle UI status updates to take some actions.
+  ///
+  /// - Parameter status: current UI status (based on iOS view life cycle).
+  func viewDidUpdate(status: ViewStatus)
 }
 
 /// Enum to know the status for the view (based on view controller life cycle)
@@ -25,11 +25,11 @@ protocol Presenter: class {
 /// - willDisappear: will disappear life cycle event
 /// - didDisappear: did disappear life cycle event
 enum ViewStatus: Int {
+  
+  case didLoad, willAppear, didAppear, willDisappear, didDisappear
+  
+  init() {
     
-    case didLoad, willAppear, didAppear, willDisappear, didDisappear
-    
-    init() {
-        
-        self = .didLoad
-    }
+    self = .didLoad
+  }
 }

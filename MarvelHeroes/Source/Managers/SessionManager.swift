@@ -9,8 +9,8 @@
 import UIKit
 
 class SessionManager: NSObject {
-    
-    static let shared = SessionManager()
-    
-    var characters: [Character]?
+  
+  static let shared = SessionManager()
+  
+  var characters: [Character]?
 }

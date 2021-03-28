@@ -10,8 +10,8 @@ import UIKit
 
 struct SeriesList: Codable {
 
-    var available: Int?
-    var returned: Int?
-    var collectionURI: String?
-    var items: [SeriesSummary]?
+  var available: Int?
+  var returned: Int?
+  var collectionURI: String?
+  var items: [SeriesSummary]?
 }

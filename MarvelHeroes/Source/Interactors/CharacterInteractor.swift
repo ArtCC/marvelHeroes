@@ -10,18 +10,18 @@ import UIKit
 
 /// Enum for result.
 enum CharacterResult: Int {
-    
-    case success, error
+
+  case success, error
 }
 
 protocol CharacterInteractor {
-    
-    /// Get all characters
-    /// - Parameters:
-    ///   - page: page for request and pagination
-    ///   - nameStartsWith: for custom request
-    ///   - output: array with characters or nil
-    func retrieveCharacters(page: Int,
-                            nameStartsWith: String?,
-                            output: @escaping(_ result: CharacterResult, _ characters: [Character]?) -> Void)
+
+  /// Get all characters
+  /// - Parameters:
+  ///   - page: page for request and pagination
+  ///   - nameStartsWith: for custom request
+  ///   - output: array with characters or nil
+  func retrieveCharacters(page: Int,
+                          nameStartsWith: String?,
+                          output: @escaping(_ result: CharacterResult, _ characters: [Character]?) -> Void)
 }
